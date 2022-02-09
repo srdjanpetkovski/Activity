@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+/**************************
+variables
+**************************/
+/**************************
+basic styles
+**************************/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #f7f7f7;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+/**************************
+mixins
+**************************/
+/**************************
+header
+**************************/
+header {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(img/header.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 85vh;
+}
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+header nav > a {
+  color: #cdd84a;
+  font-style: italic;
+  font-size: 1.8rem;
+}
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav ul li {
+  margin-left: 20px;
+  transition: 0.3s ease;
+}
+header nav ul li:hover {
+  transform: scale(1.2);
+}
+header nav ul li a {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+header hgroup {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+}
+header hgroup h1 {
+  font-size: 4rem;
+  color: #fff;
+  font-size: 500;
+  letter-spacing: 2px;
+}
+header hgroup p {
+  color: #fff;
+}
+header hgroup div {
+  margin-top: 15px;
+}
+header hgroup div button:first-child {
+  text-transform: uppercase;
+  background: #cdd84a;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+header hgroup div button:last-child {
+  text-transform: uppercase;
+  background: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  border: 1px solid #fff;
+  margin-left: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

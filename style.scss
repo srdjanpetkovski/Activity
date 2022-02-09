@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+
+/**************************
+variables
+**************************/
+$fontFamily: 'Roboto', sans-serif;
+$fontSize: 16px;
+$transition: .3s ease;
+$text: #777777;
+$white: #fff;
+$black: #000;
+$green: #cdd84a;
+$bgColor: #f7f7f7;
+
+/**************************
+basic styles
+**************************/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: $bgColor;
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    line-height: 1.5;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+    display: block;
+}
+
+/**************************
+mixins
+**************************/
+@mixin flex($x: space-between, $y: stretch, $d: row) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: $d;
+    @if ($d==row) {
+        justify-content: $x;
+        align-items: $y;
+    } @else if ($d==column) {
+        justify-content: $y;
+        align-items: $x;
+    }
+}
+@mixin btn($bgColor, $color) {
+    text-transform: uppercase;
+    background: $bgColor;
+    color: $color;
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/**************************
+header
+**************************/
+header {
+    background-image: linear-gradient(rgba($black, .5), rgba($black, .5)), url(img/header.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 85vh;
+    nav {
+        @include flex(space-between, center, row);
+        padding: 20px 30px;
+        & > a {
+            color: $green;
+            font-style: italic;
+            font-size: 1.8rem;
+        }
+        ul {
+            @include flex(space-between, center, row);
+            li {
+                margin-left: 20px;
+                transition: $transition;
+                &:hover {
+                    transform: scale(1.2);
+                }
+                a {
+                    color: $white;
+                    font-size: 1.3rem;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+    hgroup {
+        @include flex(center, center, column);
+        height: 65vh;
+        h1 {
+            font-size: 4rem;
+            color: $white;
+            font-size: 500;
+            letter-spacing: 2px;
+        }
+        p {
+            color: $white;
+        }
+        div {
+            margin-top: 15px;
+            button:first-child {
+                @include btn($green, $black);
+            }
+            button:last-child {
+                @include btn(transparent, $white);
+                border: 1px solid $white;
+                margin-left: 20px;
+            }
+        }
+    }
+}
